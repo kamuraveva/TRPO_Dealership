@@ -1,3 +1,13 @@
+> # Инструкция (обязательно к прочтению)
+
+Необходимо создать файл .env в корне проекта. В файле должны быть описаны следующие переменные:
+1. JWT_SECRET
+2. DB_HOST
+3. DB_PORT
+4. DB_USERNAME
+5. DB_PASSWORD
+6. DB_NAME
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
