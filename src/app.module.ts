@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { ConfigModule, ConfigService} from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { DealerShipModule } from './dealer-ship/dealer-ship.module';
 
 @Module({
   imports: 
@@ -26,6 +27,7 @@ import { AuthModule } from './auth/auth.module';
       inject: [ConfigService]
     }),
     AuthModule,
+    DealerShipModule,
   ],
   controllers: [AppController],
   providers: [AppService],

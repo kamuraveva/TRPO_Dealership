@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { DealerShip } from "src/dealer-ship/entities/dealer-ship.entity";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class User {
@@ -16,4 +17,10 @@ export class User {
 
     @CreateDateColumn()
     updatedAt: Date
+
+    @OneToMany(() => DealerShip, (dealerShip) => dealerShip.creator)
+    dealerShipsCreator: DealerShip[]
+
+    @OneToMany(() => DealerShip, (dealerShip) => dealerShip.editor)
+    dealerShipsEditor: DealerShip[]
 }
