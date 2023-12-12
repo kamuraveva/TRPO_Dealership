@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService} from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { DealerShipModule } from './dealer-ship/dealer-ship.module';
+import { SingletonModule } from './singleton/singleton.module';
 
 @Module({
   imports: 
@@ -28,6 +29,7 @@ import { DealerShipModule } from './dealer-ship/dealer-ship.module';
     }),
     AuthModule,
     DealerShipModule,
+    SingletonModule
   ],
   controllers: [AppController],
   providers: [AppService],
