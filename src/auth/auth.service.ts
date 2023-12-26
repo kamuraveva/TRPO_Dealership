@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, Logger, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as argon2  from 'argon2'; 
 import { UserService } from 'src/user/user.service';
@@ -7,6 +7,7 @@ import { IUser } from './types/types';
 
 @Injectable()
 export class AuthService {
+  private readonly logger = new Logger(AuthService.name)
   constructor (
     private readonly userService: UserService,
     private readonly jwtService: JwtService,
@@ -24,6 +25,7 @@ export class AuthService {
   }
 
   async login(user: IUser) {
+    this.logger.log(`вход пользователя с email ${user.email}` )
     const { id, email } = user
     return {
       id,

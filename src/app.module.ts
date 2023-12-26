@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { DealerShipModule } from './dealer-ship/dealer-ship.module';
 import { SingletonModule } from './singleton/singleton.module';
+import { LoggerModule } from './my-logger/my-logger.module';
 
 @Module({
   imports: 
@@ -29,7 +30,8 @@ import { SingletonModule } from './singleton/singleton.module';
     }),
     AuthModule,
     DealerShipModule,
-    SingletonModule
+    SingletonModule,
+    LoggerModule
   ],
   controllers: [AppController],
   providers: [AppService],
